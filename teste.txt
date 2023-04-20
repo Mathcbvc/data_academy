@@ -1,0 +1,2 @@
+Para a manipulação de textos em python, usamos alguns comandos chave. Temos muito o que aprender ainda.
+Data Science fornece cursos de alta qualidade e que transmitem muito conhecimento.
