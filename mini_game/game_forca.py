@@ -11,7 +11,8 @@ def limpaTela():
 def game(): 
     limpaTela()
 
-    palavras = ['abacaxi', 'holofote', 'giroscopio', 'belzebu', 'bicicleta', 'tomada', 'carro','girafa', 'lotus', 'cumaru']
+    palavras = ['abacaxi', 'holofote', 'giroscopio', 'belzebu', 'bicicleta', 'tomada', 'carro','girafa', 'lotus', 'cumaru', 'balanço', 'hotel', 'maracutaia', 
+                'onibus', 'sofa', 'patins', 'sistema', 'palavra', 'biblioteca', 'corrente', 'portal','pamonha','milho', 'galinha', 'vaca', 'cabrito', 'pedregulho']
     palavra = random.choice(palavras)
     
     pontilhado = ["_" for letra in palavra]
