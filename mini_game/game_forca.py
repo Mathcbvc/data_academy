@@ -17,6 +17,7 @@ def game():
     pontilhado = ["_" for letra in palavra]
     tentativas = 6
     digitadas = []
+    index = 0 # controla o indice da palavra
 
     while tentativas > 0:
         limpaTela()# chama a função criada para limpar a tela antes do jogo começar
@@ -28,25 +29,22 @@ def game():
 
         tentativa = input("\nDigite uma letra: ").lower()#para facilitar tratamento, colocamos em lowercase
 
-        if tentativa in palavra:#verifica se a letra digitada consta dentro da string
-            
-            #index = 0 # controla o indice da palavra
-            for indice,letra in enumerate(palavra):
-                pontilhado[indice] = letra #substitui o traço pontilhado pela letra digitada
-        
-            #index += 1 # passa para o próximo  indice
-        else:
-            tentativas -= 1 # diminui as tentativas
-            digitadas.append(tentativa) #adiciona a tentativa errada na lista de digitadas
-            print("Letra incorreta!")
-
-        if "_" not in pontilhado: # testa se existe pontilhado dentro da palavra oculta, se não tiver o jogo acabou
-            print("Você venceu!A palavra era: {}".format(palavra))
+        if tentativa not in palavra:
+            print('Letra {} não está na palavra {} \n'.format(tentativa,palavra))
+            tentativas -=1
+            digitadas += tentativa
+        elif tentativa in palavra:
+            print('Letra {} tem na palavra! \n'.format(tentativa))
+            for index,letra in enumerate(palavra):
+                if(letra == tentativa):
+                    pontilhado[index] = tentativa
+        if '_' not in pontilhado:
+            print('\n Você acertou! A palavra é {} \n'.format(palavra.upper()))
             break
     
-    if "_" in pontilhado:
-        print("Você perdeu! A palavra era: {}".format(palavra))
-
+    if '_' in pontilhado:
+        print('\n Você perdeu! A palavra era {} \n'.format(palavra.upper()))
+    
 
 #bloco main -> É usado para informar ao interpretador que isso aqui é um programa, é um módulo Python.
 
